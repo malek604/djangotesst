@@ -1,0 +1,19 @@
+<!-- accessories/home.html -->
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>صفحه اصلی لوازم جانبی</title>
+</head>
+<body>
+    <h1>لوازم جانبی موجود</h1>
+    <ul>
+        {% for accessory in accessories %}
+            <li>
+                <a href="{% url 'accessory_detail' slug=accessory.slug %}">{{ accessory.name }}</a> - {{ accessory.price }} تومان
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

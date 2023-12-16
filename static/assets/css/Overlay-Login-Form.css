@@ -1,0 +1,187 @@
+.form-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ... */
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1); /* اضافه کردن سایه برای دادن عمق */
+  border: 2px solid rgba(255,255,255,0.6); /* تغییر در شفافیت برای جلوه بهتر */
+  border-radius: 25px; /* افزایش تدریجی گوشه‌ها برای نرمی بیشتر */
+  /* ... */
+}
+:root {
+  --input-border-color: #aaa;
+  --input-border-color-focus: #007bff; /* رنگی که هنگام فوکس روی input مشاهده می‌شود */
+  --input-transition-duration: 0.3s;
+  --input-box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28); /* سایه‌ای برای حالت فوکوس */
+}
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #aaa; /* تضعیف رنگ تا زمان فعال‌سازی input */
+  transition: border-color 0.3s; /* صاف کردن تغییر رنگ با انیمیشن */
+  border-bottom: 2px solid var(--input-border-color);
+  transition: border-color var(--input-transition-duration), box-shadow var(--input-transition-duration);
+}
+
+input:focus ~ label, input:valid ~ label {
+  top: -5px;
+}
+
+.inputbox input:focus {
+  outline: none;
+  border-color: var(--input-border-color-focus);
+  box-shadow: var(--input-box-shadow);
+}
+
+.inputbox input::placeholder {
+  color: var(--input-border-color);
+  transition: color var(--input-transition-duration);
+}
+
+.inputbox input:focus::placeholder {
+  color: transparent; /* پلاس‌هلدر را هنگام فوکس پنهان می‌کند */
+}
+
+
+
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #fff;
+  border-color: #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.3s ease all; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins',sans-serif;
+}
+
+.section-bg-overlay {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(208,148,34,0.50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: white;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: url('../../assets/img/6213932.jpg')no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; 
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #8e7842;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  color: #ffffff;
+  transition: 0.2s all ease-in-out; /* افکت انیمیشن نرم برای دکمه */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* اضافه کردن سایه نرم */
+}
+button:hover {
+  background: #9e8c53; /* تغییر رنگ دکمه به رنگ روشن‌تر */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* بزرگتر کردن سایه برای افکت عمق */
+  transform: translateY(-2px); /* بالا رفتن دکمه هنگام ماوس هاور */
+}
+
+.forget {
+  margin: -15px 0 15px;
+  font-size: .9em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.forget label input {
+  margin-right: 3px;
+}
+
+.forget label a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.forget label a:hover {
+  text-decoration: underline;
+}
+
+.register {
+  font-size: .9em;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.register p a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.register p a:hover {
+  text-decoration: underline;
+}
+.register p a, .forget label a {
+  transition: color 0.3s ease-in-out; /* اضافه کردن انیمیشن هنگام تغییر رنگ */
+}
+
+.register p a:hover, .forget label a:hover {
+  color: #e0e0e0; /* تغییر رنگ لینک‌ها به رنگ روشن‌تر */
+}
+
+/* استایل لینک‌های ثبت‌نام و فراموشی رمز عبور */
+.register a,
+.forget a {
+    text-decoration: none; /* حذف خط زیر متن */
+    color: rgb(2, 67, 4); /* رنگ آبی */
+    transition: color 0.3s; /* افکت انتقال رنگ */
+}
+
+/* تغییر رنگ لینک‌ها هنگام حرکت ماوس روی آن‌ها */
+.register a:hover,
+.forget a:hover {
+    color: #fcfcfd; /* رنگ آبی تیره‌تر */
+}

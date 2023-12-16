@@ -1,0 +1,33 @@
+a {
+    color: #007bff; /* رنگ پیش‌فرض لینک */
+    text-decoration: none; /* حذف خط زیر لینک */
+    transition: color 0.2s ease-in-out, border-bottom 0.2s ease-in-out; /* اضافه کردن انیمیشن برای تغییر رنگ و حاشیه */
+}
+
+a:hover,
+a:focus {
+    color: #93b0cf; /* رنگ لینک هنگام هاور یا فوکوس */
+    border-bottom: 2px solid #0056b3; /* اضافه کردن خط زیرین هنگام هاور */
+}
+
+/* استایل‌دهی برای لینک‌های دارای کلاس 'btn-like' که شبیه دکمه می‌شوند */
+a.btn-like {
+    background-color: #59738e;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+a.btn-like:hover,
+a.btn-like:focus {
+    background-color: #0056b3;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* اضافه کردن افکت برای لینک فعال */
+a.active, a.active:hover {
+    color: #ffc107; /* تغییر رنگ لینک فعال */
+    border-bottom: 2px solid #ffc107; /* تغییر رنگ خط زیرین لینک فعال */
+}
