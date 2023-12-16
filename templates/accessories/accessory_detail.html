@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ accessory.name }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            direction: rtl; /* برای نوشتار راست به چپ */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .header,
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .product-details {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            background: #f4f4f4;
+        }
+        .product-price {
+            color: #E10C4C;
+            font-size: 1.4em;
+        }
+        .product-stock {
+            color: #5DAE49;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ accessory.name }}</h1>
+    </div>
+
+    <div class="container">
+        <img src="{{ accessory.image.url }}" alt="{{ accessory.name }}" class="product-image">
+        <div class="product-details">
+            <p>برند: {{ accessory.brand }}</p>
+            <p class="product-price">قیمت: {{ accessory.price }} تومان</p>
+            <p class="product-stock">تعداد در انبار: {{ accessory.stock }}</p>
+            <!-- افزودن اطلاعات بیشتر در اینجا -->
+        </div>
+    </div>
+    
+    <div class="footer">
+        فروشگاه اینترنتی اکسسوری ها
+    </div>
+</body>
+</html>

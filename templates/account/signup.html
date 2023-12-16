@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>فرم ثبت نام</title>
+    <link rel="stylesheet" href="{% static 'assets/css/Overlay-Login-Form.css' %}">
+</head>
+<body>
+<section>
+    <div class="section-bg-overlay">
+        <div class="form-box">
+            <div class="form-value">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="inputbox">
+                        {{ form.username }}
+                        <label for="id_username">{{ form.username.label }}</label>
+                    </div>
+                    <div class="inputbox">
+                        {{ form.useremail }}
+                        <label for="id_useremail">{{ form.useremail.label }}</label>
+                    </div>
+                    <div class="inputbox">
+                        {{ form.userpassword }}
+                        <label for="id_userpassword">{{ form.userpassword.label }}</label>
+                    </div>
+                    <div class="inputbox">
+                        {{ form.userpasswordconfirm }}
+                        <label for="id_userpasswordconfirm">{{ form.userpasswordconfirm.label }}</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mb-3">ثبت نام</button>
+                    <div class="login text-center">
+                        <p class="mb-0">قبلاً ثبت نام کرده‌اید؟ <a href="">ورود</a></p>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% if message %}
+    <script>
+        alert("{{ message }}");
+    </script>
+{% endif %}
+    
+
+</body>
+</html>
